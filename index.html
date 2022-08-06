@@ -118,7 +118,70 @@
 </style>
 </head>
 <body class="client-desktop" data-page-id="p-home">
+<!-- templates -->
+	<script type="text/x-wz-template" id="tpl-gameitem">
+		<div class="game-item viewport_check {class}" data-code="{code}" data-preview="{has_preview}" data-is-new="{is_new}" data-is-hot="{is_hot}" data-is-fav="{is_fav}" data-funplay="{has_funplay}">
+			<div class="hero">
+				<div class="actions">
+					<div class="btn cta-main ico-after grad-red"  data-code="{code}">Mainkan Sekarang</div>
+                    								</div>
+				<div class="thumbnail ico-after" data-action="gi-show-actions">
+					<img src="//scontent-wh.whitehatgaming.com/images/wh_portrait/{image}" />
+					<!-- <img src="//scontent-wh.whitehatgaming.com/images/Spin Rider/{image}" /> -->
+					{reddot}
+					{pjp_ticker}
+					<div class="provider-logo" style="background-image: url(https://fixed-assets-wz.s3.amazonaws.com/logo-providers/{provider}.png)"></div>
+					<div class="icos">
+						<div class="sym new">New</div>
+						<div class="sym ico-before hot"></div>
+						<div class="sym ico-before preview"></div>
+					</div>
+				</div>
+			</div>
+			<div class="control-panel">
+				<a class="fav ico-before" data-action="toggle-favorite" data-code="{code}"></a>
+				<div class="title" title="{title}">{title}</div>
+			</div>
+		</div>
+	</script>
 
+	<script type="text/x-wz-template" id="tpl-game-preview-mp4">
+		<div class="x-preview ico-before">
+			<video autoplay loop muted>
+				<source src="media/game-previews/mp4/{code}.mp4?{ck}" type="video/mp4" />
+			</video>
+		</div>
+	</script>
+
+	<script type="text/x-wz-template" id="tpl-game-preview-gif">
+		<div class="x-preview ico-before">
+			<img src="media/game-previews/gif/{code}.gif?{ck}" />
+		</div>
+	</script>
+
+	<script type="text/x-wz-template" id="tpl-provideritem">
+		<div class="provider-item viewport_check" data-code="{code}" data-action="showProvider">
+			<div class="hero">
+				<div class="thumbnail" style="background-image: url(http://fixed-assets-wz.s3.amazonaws.com/logo-providers/{code}.png)">
+					<div class="icos">
+						<div class="game-count">{gamecount} games</div>
+					</div>
+				</div>
+			</div>
+			<div class="control-panel">
+				<div class="title">{title}</div>
+			</div>
+		</div>
+	</script>
+
+	<div id="fav-anim">
+		<div class="fav"></div>
+		<div class="unfav">
+			<div class="lf"></div>
+			<div class="rt"></div>
+		</div>
+	</div>
+	<!-- end of templates -->
 	<div id="menu">
 		<div class="btn-close ico-before" data-action="burger-menu-hide"></div>
 		<div class="panel">
